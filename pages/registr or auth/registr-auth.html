@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../css/index.css"
+    />
+  </head>
+  <body class="registr__auth">
+    <header>
+      <!-- <nav>
+        <ul>
+          <li class="about-link"><a href="../about/about.html">О нас</a></li>
+          <li class="reg__auth-link">
+            <a href="./registr or auth/registr-auth.html">Регистрация</a>
+          </li>
+          <li class="main-link">
+            <a href="../main/main.html">Главная страница</a>
+          </li>
+          <li class="promo-link"><a href="../pages/promo/promo.html"></a></li>
+          <li class="cards-link"><a href="../cards/cards.html">Карты</a></li>
+        </ul>
+      </nav> -->
+    </header>
+    <main >
+      <div class="forms-container">
+      <form id="registr">
+        <input placeholder="Введите логин..." class="login" type="text" />
+        <input placeholder="Введите почту..." class="email" type="email" />
+        <div class="password_div">
+          <input
+            placeholder="Введите пароль..."
+            id="password"
+            type="password"
+          />
+
+          <button id="view__password" type="submit">
+            <!-- <img class="view__password" src="../../images/reg_auth/eye-view.svg" alt="" /> -->
+          </button>
+        </div>
+        <div class="re_password__div">
+          <input
+            placeholder="Потвердите пароль..."
+            id="re__password"
+            type="password"
+          />
+          <button id="view__Repassword" type="submit">
+            <!-- <img class="view__Repassword" src="../../images/reg_auth/eye-view.svg" alt="" /> -->
+          </button>
+        </div>
+        <select name="stock__exchange" id="stock__change">
+          <option value="binance">
+            <img
+              src="../../images/main/stock__exchage icons/binance.svg"
+              alt=""
+            />
+            Binance
+          </option>
+          <option value="okx">
+            <img src="../../images/main/stock__exchage icons/okx.svg" alt="" />
+            OKX
+          </option>
+          <option value="cryptoCom">
+            <img
+              src="../../images/main/stock__exchage icons/crypto-com.png"
+              alt=""
+            />
+            Crypto.com
+          </option>
+          <option value="bybit">
+            <img
+              src="../../images/main/stock__exchage icons/bybit-seeklogo.svg"
+              alt=""
+            />
+            ByBit
+          </option>
+          <option value="bingx">
+            <img
+              src="../../images/main/stock__exchage icons/bingx.svg"
+              alt=""
+            />
+            BingX
+          </option>
+          <option value="htx"><img src="" alt="" /> HTX</option>
+          <option value="kucoin">
+            <img
+              src="../../images/main/stock__exchage icons/kucoin.png"
+              alt=""
+            />
+            Kucoin
+          </option>
+          <option value="gateIo">
+            <img
+              src="../../images/main/stock__exchage icons/gateio.svg"
+              alt=""
+            />
+            Gate.io
+          </option>
+          <option value="mexc">
+            <img
+              src="../../images/main/stock__exchage icons/mexc.webp"
+              alt=""
+            />
+            MEXC
+          </option>
+          <option value="bitget">Bitget</option>
+        </select>
+        <div class="check-div">
+          <label class="check">
+            <input name="checkbox" type="checkbox" />
+          </label>
+          <p>Я соглашаюсь с 
+            <span>политикой конфиденциальности</span></p>
+          </div>
+          <div class="error"></div>
+        <!-- <button class="show__passwordBtn" type="submit">Показать пароль</button> -->
+        <button class="registr" type="submit">Регистрация</button>
+        <p class="to__auth">Уже есть аккаунт?</p>
+      </form>
+
+      <form id="auth"  >
+        <input placeholder="Введите логин" class="login" type="text" />
+        <input placeholder="Введите почту" class="email" type="text" />
+        <div class="password_div">
+          <input
+            placeholder="Введите пароль..."
+            id="password"
+            type="password"
+          />
+          <button id="view__password" type="submit">
+            <!-- <img class="view__password" src="../../images/reg_auth/eye-view.svg" alt="" /> -->
+          </button>
+        </div>
+        <!-- <button class="show__passwordBtn" type="submit">Показать пароль</button> -->
+        <div class="error"></div>
+        <button class="auth" type="submit">Вход</button>
+        <p class="to__registr">Ещё нету аккаунта?</p>
+      </form>
+    </div>
+      <button id="back-btn"><- Назад</button>
+    </main>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script type="module" src="./registr-auth.js"></script>
+  </body>
+</html>

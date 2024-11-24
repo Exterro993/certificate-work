@@ -1,0 +1,74 @@
+// @import "./_blocks/loader";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "./_blocks/promo";
+@import "./_blocks/main";
+@import "./_blocks/cards";
+@import "./_blocks/registr-auth";
+@import "./_blocks/about";
+@import "./_blocks/airdrop";
+@import "./_blocks/friends";
+// :root{}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #32363c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  a {
+    color: #fffefd;
+    text-decoration: none;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+    // height: 100%;
+    padding: 0px;
+    gap: 5px;
+  }
+  #current {
+    background-color: #212429;
+    border-radius: 10px;
+    @media (max-width: 400px) {
+      padding: 5px;
+    }
+  }
+  .nav__card {
+    // max-width: 65px;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 600px) {
+      p {
+        font-size: 10px;
+      }
+      max-width: 35px;
+    }
+    a {
+      color: #fffefd;
+      text-decoration: none;
+    }
+    .nav-card-img {
+      /*    max-width: 30px;
+    max-height: 30px; */
+      img {
+        width: 30px;
+        height: 30px;
+        @media (max-width: 600px) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
