@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+
     <link rel="icon" href="../../images/nav/airdrop.png" type="image/png">
     <link
       rel="stylesheet"
@@ -13,7 +15,6 @@
       href="../../css/index.css"
     />
     <!-- <script defer src="anime.min.js"></script> -->
-    <script defer src="./main.js"></script>
   </head>
   <body class="main">
     <header>
@@ -37,31 +38,33 @@
         <div class="user__avatar__img">
           <img src="../../images/main/user__avatar.jpg " alt="avatar" />
         </div>
-        <p>User</p>
+        <div class="user-info">
+          <span id="user-name"></span>
+        </div>
       </div>
       <div class="user__stock__exchage">
-        <div class="user__stock__exchange__img">
-          <img
+        <!-- <div class="user__stock__exchange__img"> -->
+          <!-- <img
             src="../../images/main/stock__exchage icons/binance.svg"
             alt=""
-          />
-        </div>
-        <p>Binance</p>
-        <!-- <img src="../../images/main/stock__exchage icons/bingx.svg" alt="">
-        <img src="../../images/main/stock__exchage icons/bitget-seeklogo.svg" alt="">
+          /> -->
+        <!-- </div> -->
+        <div class="exchange-icon"></div>
+        <!-- < <img src="../../images/main/stock__exchage icons/bingx.svg" alt=""> -->
+        <!-- <img src="../../images/main/stock__exchage icons/bitget-seeklogo.svg" alt="">
         <img src="../../images/main/stock__exchage icons/bybit-seeklogo.svg" alt="">
         <img src="../../images/main/stock__exchage icons/crypto-com.png" alt="">
         <img src="../../images/main/stock__exchage icons/gateio.svg" alt="">
         <img src="../../images/main/stock__exchage icons/HTX-01.svg" alt="">
         <img src="../../images/main/stock__exchage icons/kucoin.png" alt="">
         <img src="../../images/main/stock__exchage icons/mexc.webp" alt="">
-        <img src="../../images/main/stock__exchage icons/okx.svg" alt=""> -->
-      </div>
+        <img src="../../images/main/stock__exchage icons/okx.svg" alt="">  -->
+      </div> 
     </div>
     <main>
       <div class="info__clicker">
         <div class="info">
-          <div class="per__tap info-card">
+          <div id="clickRewardDisplay" class="per__tap info-card">
             <p
               style="
                 color: #f79841;
@@ -70,13 +73,13 @@
                 font-family: 'Roboto';
               "
             >
-              Заработок за клик
+              <!-- Заработок за клик -->
               <span
-                ><img src="../../images/main/coin.svg" alt="coin" /> ...</span
+                ><img src="../../images/main/coin.svg" alt="coin" /> <p id="clickReward"></p> </span
               >
             </p>
           </div>
-          <div class="to__newLvl info-card">
+          <!-- <div class="to__newLvl info-card">
             <p
               style="
                 text-align: center;
@@ -91,7 +94,7 @@
                 ><img src="../../images/main/coin.svg" alt="coin" /> ...</span
               >
             </p>
-          </div>
+          </div> -->
           <div class="per__hour info-card">
             <p
               style="
@@ -101,9 +104,8 @@
                 font-family: 'Roboto';
               "
             >
-              Заработок в час
-              <span
-                ><img src="../../images/main/coin.svg" alt="coin" /> ...</span
+              <!-- Заработок в час -->
+              <span><img src="../../images/main/coin.svg" alt="coin" /> <p id="earnPerHourDisplay"></p> </span
               >
             </p>
           </div>
@@ -111,11 +113,11 @@
             <div class="coin__div">
               <img src="../../images/main/coin.svg" alt="coin" />
             </div>
-            <p style="font-size: 46px">...</p>
+            <p id="coinsDisplay" style="font-size: 26px"></p>
           </div>
         </div>
 
-        <div class="clicker">
+        <div id="clickButton" class="clicker">
           <img src="../../images/main/seal-clicker.png" alt="" />
         </div>
       </div>
@@ -125,12 +127,12 @@
             <img src="../../images/main/energy-icon.svg" alt="" />
           </div>
           <div class="energy__text">
-            <p>6500 / 6500</p>
+            <p id="energyDisplay"></p>
           </div>
         </div>
-        <div class="boost">
+        <!-- <div class="boost">
           <p>Boost</p>
-        </div>
+        </div> -->
       </div>
       <nav>
         <a href="../main/main.html " id="current" class="nav__card">
@@ -166,11 +168,13 @@
         </a>
       </nav>
     </main>
+    
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js"
-      integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js"
+    integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
     ></script>
   </body>
+  <script type="module" src="./main-page.js"></script>
 </html>

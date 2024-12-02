@@ -14,4 +14,10 @@
     prevEl: ".swiper-button-prev",
   },
 });
+const logout = () => {
+  localStorage.removeItem('currentUser');
+  window.location.href = '../registr or auth/registr-auth.html';
+};
+document.getElementById('logoutButton').addEventListener('click', logout);
+
 // Swiper();

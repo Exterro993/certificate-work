@@ -1,0 +1,22 @@
+.ban {
+    background-color: #202227;
+    color: #fffefd;
+    font-family: "Roboto";
+    height: 100vh;
+    background-image: url("../../images/about/bg.png");
+    .window {
+      max-width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      margin-top: 200px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 20px;
+
+      padding: 20px;
+      background-color: rgb(41, 45, 47);
+    }
+}

@@ -12,7 +12,6 @@
       media="screen"
       href="../../css/index.css"
     />
-    <script defer type="module" src="../../main.js"></script>
   </head>
   <body class="friends">
     <main>
@@ -21,10 +20,21 @@
             <p>Найдите друга и получите 10.000 монет!</p>
             <form action="">
                 <input type="text" name="friend__name" id="friend__name" />
+                <button class="find__friend" type="submit">Найти!</button>
             </form>
         </div>
         <div class="friends-list">
-          <ul>
+          <!-- <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div> -->
+          <!-- <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div>
+          <div class="loginItem"><img src="../../images/main/user__avatar.jpg" alt=""></div> -->
+          <!-- <ul>
           <p>Список ваших друзей (...)</p>
             <li>
                 <div class="friend">
@@ -50,7 +60,7 @@
                     <p id="friend-name">Murod</p>
                 </div>
             </li>
-        </ul>
+        </ul> -->
       </div>
     </main>
     <nav>
@@ -88,5 +98,7 @@
         <p>Airdrop</p>
       </a>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./friends.js"></script>
   </body>
 </html>

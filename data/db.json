@@ -1,0 +1,117 @@
+{
+  "users": [
+    {
+      "id": "9e38",
+      "login": "Exterro",
+      "password": "20122012_Dr",
+      "email": "daniarrogachev@gmail.com",
+      "status": true,
+      "exchange": "binance",
+      "title": "admin",
+      "coins": 0,
+      "energy": 10000,
+      "clickLevel": 1,
+      "energyLevel": 1,
+      "clickReward": 1,
+      "clickCost": 1000,
+      "energyCost": 500,
+      "earnPerHour": 0
+    },
+    {
+      "id": "b950",
+      "login": "Ratareto",
+      "password": "20132011_Dr",
+      "email": "exterro@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "admin",
+      "coins": 0,
+      "energy": 10000,
+      "clickLevel": 1,
+      "energyLevel": 1,
+      "clickReward": 1,
+      "clickCost": 1000,
+      "energyCost": 500,
+      "earnPerHour": 0
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": false,
+      "title": "user",
+      "coins": 0,
+      "energy": 10000,
+      "earnPerHour": 0
+    },
+    {
+      "id": "262e",
+      "login": "Sigma",
+      "password": "20142010_Dr",
+      "email": "rtatret@mail.ru",
+      "exchange": "htx",
+      "coins": 0,
+      "energy": 10000,
+      "earnPerHour": 0
+    },
+    {
+      "id": "a306",
+      "login": "sdhudfhfh",
+      "password": "Jahon777!",
+      "email": "dfsfjsdff@mail.ru",
+      "exchange": "bingx",
+      "status": true,
+      "title": "user",
+      "coins": 0,
+      "energy": 10000,
+      "earnPerHour": 0
+    },
+    {
+      "id": "a639",
+      "login": "Test2",
+      "password": "TestTest2!",
+      "email": "daniarrogachev@gmail.com",
+      "exchange": "gateIo",
+      "status": true,
+      "title": "user",
+      "coins": 0,
+      "energy": 10000,
+      "earnPerHour": 0
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "name": ""
+    }
+  ],
+  "promoСodes":[
+    {
+      "id": 1,
+      "code": "ExterroSigma",
+      "reward": 10000
+    },   
+    {
+      "id": 2,
+      "code": "EXTERRO+1000JXRF",
+      "reward": 10000
+    },
+    {
+      "id": 3,
+      "code": "",
+      "reward": 10000
+    },
+    {
+      "id": 4,
+      "code": "",
+      "reward": 10000
+    },
+    {
+      "id": 5,
+      "code": "SEAL2024",
+      "reward":10000
+    }
+  ]
+}
