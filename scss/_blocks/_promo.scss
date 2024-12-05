@@ -50,3 +50,19 @@
     }
   }
 }
+
+    #promoForm {
+      button {
+        cursor: pointer;
+        padding: 20px;
+        background-color: rgb(40, 116, 138, 0.6);
+        border-radius: 15px;
+        border: 0;
+        color: #fffefd;
+        font-weight: 600;
+        font-size: 12px;
+        transition: 1s;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }

@@ -7,7 +7,7 @@
       "email": "daniarrogachev@gmail.com",
       "status": true,
       "exchange": "binance",
-      "title": "admin",
+      "title": "Admin",
       "coins": 0,
       "energy": 10000,
       "clickLevel": 1,
@@ -24,7 +24,7 @@
       "email": "exterro@mail.ru",
       "exchange": "binance",
       "status": true,
-      "title": "admin",
+      "title": "Admin",
       "coins": 0,
       "energy": 10000,
       "clickLevel": 1,
@@ -40,8 +40,8 @@
       "password": "19741974_Bt",
       "email": "test@mail.ru",
       "exchange": "binance",
-      "status": false,
-      "title": "user",
+      "status": true,
+      "title": "User",
       "coins": 0,
       "energy": 10000,
       "earnPerHour": 0
@@ -52,6 +52,7 @@
       "password": "20142010_Dr",
       "email": "rtatret@mail.ru",
       "exchange": "htx",
+      "title": "User",
       "coins": 0,
       "energy": 10000,
       "earnPerHour": 0
@@ -63,7 +64,7 @@
       "email": "dfsfjsdff@mail.ru",
       "exchange": "bingx",
       "status": true,
-      "title": "user",
+      "title": "User",
       "coins": 0,
       "energy": 10000,
       "earnPerHour": 0
@@ -75,43 +76,995 @@
       "email": "daniarrogachev@gmail.com",
       "exchange": "gateIo",
       "status": true,
-      "title": "user",
+      "title": "User",
       "coins": 0,
       "energy": 10000,
       "earnPerHour": 0
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "User",
+      "coins": 523.2500000001104,
+      "energy": 10000,
+      "earnPerHour": 197,
+      "lastVisit": 1733319012311,
+      "lastVisitTime": 1733309998172
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "User",
+      "coins": 530.9000000001034,
+      "energy": 10000,
+      "earnPerHour": 197,
+      "lastVisit": 1733319170590,
+      "lastVisitTime": 1733309998172
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "User",
+      "coins": 530.9000000001034,
+      "energy": 10000,
+      "earnPerHour": 197,
+      "lastVisit": 1733319174895,
+      "lastVisitTime": 1733309998172
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "User",
+      "coins": 531.5000000001029,
+      "energy": 10000,
+      "earnPerHour": 197,
+      "lastVisit": 1733319194158,
+      "lastVisitTime": 1733309998172
+    },
+    {
+      "id": "a950",
+      "login": "test",
+      "password": "19741974_Bt",
+      "email": "test@mail.ru",
+      "exchange": "binance",
+      "status": true,
+      "title": "User",
+      "coins": 531.5000000001029,
+      "energy": 10000,
+      "earnPerHour": 197,
+      "lastVisit": 1733319196827,
+      "lastVisitTime": 1733309998172
     }
   ],
-  "cards": [
+  "cards": {
+    "legal": [
+      {
+        "name": "KYC",
+        "perHour": "0.5K",
+        "cost": 50,
+        "max lvl": "21"
+      },
+      {
+        "name": "KYB",
+        "perHour": "2.0K",
+        "cost": 200,
+        "max lvl": "18"
+      },
+      {
+        "name": "Legal opinion",
+        "perHour": "2.2K",
+        "cost": 220,
+        "max lvl": "19"
+      },
+      {
+        "name": "SEC transparancy",
+        "perHour": "1.9K",
+        "cost": 190,
+        "max lvl": "17"
+      },
+      {
+        "name": "Anti money loundering",
+        "perHour": "8.6K",
+        "cost": 860,
+        "max lvl": "17"
+      },
+      {
+        "name": "Licence UAE",
+        "perHour": "17.2K",
+        "cost": 1720,
+        "max lvl": "17"
+      },
+      {
+        "name": "Licence Europe",
+        "perHour": "20.0K",
+        "cost": 2000,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Asia",
+        "perHour": "10.3K",
+        "cost": 1030,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence South America",
+        "perHour": "10.9K",
+        "cost": 1090,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Australia",
+        "perHour": "23.1K",
+        "cost": 2310,
+        "max lvl": "18"
+      },
+      {
+        "name": "Licence North America",
+        "perHour": "26.7K",
+        "cost": 2670,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Nigeria",
+        "perHour": "5.2K",
+        "cost": 520,
+        "max lvl": "17"
+      },
+      {
+        "name": "Licence Japan",
+        "perHour": "72.4K",
+        "cost": 7240,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Ethiopia",
+        "perHour": "50.2K",
+        "cost": 5020,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence India",
+        "perHour": "69.7K",
+        "cost": 6970,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Bangladesh",
+        "perHour": "97.6K",
+        "cost": 9760,
+        "max lvl": "16"
+      },
+      {
+        "name": "licence Indonesia",
+        "perHour": "139.4K",
+        "cost": 13940,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Vietnam",
+        "perHour": "111.5K",
+        "cost": 11150,
+        "max lvl": "16"
+      },
+      {
+        "name": "License Turkey",
+        "perHour": "83.7K",
+        "cost": 8370,
+        "max lvl": "16"
+      },
+      {
+        "name": "Licence Philippines",
+        "perHour": "181.3K",
+        "cost": 18130,
+        "max lvl": "16"
+      }
+    ],
+    "markets": [
+      {
+        "name": "Fan tokens",
+        "perHour": "29.2K",
+        "cost": 2920,
+        "max lvl": "17"
+      },
+      {
+        "name": "Staking",
+        "perHour": "18.5K",
+        "cost": 1850,
+        "max lvl": "17"
+      },
+      {
+        "name": "BTC pairs",
+        "perHour": "1.7K",
+        "cost": 170,
+        "max lvl": "21"
+      },
+      {
+        "name": "ETH pairs",
+        "perHour": "1.8K",
+        "cost": 180,
+        "max lvl": "21"
+      },
+      {
+        "name": "Top 10 cmc pairs",
+        "perHour": "2.7K",
+        "cost": 270,
+        "max lvl": "18"
+      },
+      {
+        "name": "GameFi tokens",
+        "perHour": "2.9K",
+        "cost": 290,
+        "max lvl": "20"
+      },
+      {
+        "name": "Defi2.0 tokens",
+        "perHour": "1.6K",
+        "cost": 160,
+        "max lvl": "20"
+      },
+      {
+        "name": "SocialFI tokens",
+        "perHour": "1.5K",
+        "cost": 150,
+        "max lvl": "17"
+      },
+      {
+        "name": "Meme coins",
+        "perHour": "4.1K",
+        "cost": 410,
+        "max lvl": "19"
+      },
+      {
+        "name": "Shit coins",
+        "perHour": "20.0K",
+        "cost": 2000,
+        "max lvl": "18"
+      },
+      {
+        "name": "Margin trading x10",
+        "perHour": "8.5K",
+        "cost": 850,
+        "max lvl": "17"
+      },
+      {
+        "name": "Margin trading x20",
+        "perHour": "11.9K",
+        "cost": 1190,
+        "max lvl": "18"
+      },
+      {
+        "name": "Margin trading x30",
+        "perHour": "18.7K",
+        "cost": 1870,
+        "max lvl": "19"
+      },
+      {
+        "name": "Margin trading x50",
+        "perHour": "37.3K",
+        "cost": 3730,
+        "max lvl": "18"
+      },
+      {
+        "name": "Margin trading x75",
+        "perHour": "37.3K",
+        "cost": 3730,
+        "max lvl": "18"
+      },
+      {
+        "name": "Margin trading x100",
+        "perHour": "13.7K",
+        "cost": 1370,
+        "max lvl": "10"
+      },
+      {
+        "name": "Derivatives",
+        "perHour": "16.8K",
+        "cost": 1680,
+        "max lvl": "18"
+      },
+      {
+        "name": "Prediction markets",
+        "perHour": "11.7K",
+        "cost": 1170,
+        "max lvl": "18"
+      },
+      {
+        "name": "Web3 Integration",
+        "perHour": "24.3K",
+        "cost": 2430,
+        "max lvl": "17"
+      },
+      {
+        "name": "DAO",
+        "perHour": "7.8K",
+        "cost": 780,
+        "max lvl": "18"
+      },
+      {
+        "name": "P2P trading",
+        "perHour": "13.2K",
+        "cost": 1320,
+        "max lvl": "18"
+      },
+      {
+        "name": "Tradings bots",
+        "perHour": "6.0K",
+        "cost": 600,
+        "max lvl": "17"
+      },
+      {
+        "name": "LayerZero Listing",
+        "perHour": "27.7K",
+        "cost": 2770,
+        "max lvl": "17"
+      }
+    ],
+    "prTeam": [
+      {
+        "name": "CEO",
+        "perHour": "4.1K",
+        "cost": 410,
+        "max lvl": "20"
+      },
+      {
+        "name": "Marketing",
+        "perHour": "2.4K",
+        "cost": 240,
+        "max lvl": "18"
+      },
+      {
+        "name": "IT team",
+        "perHour": "9.0K",
+        "cost": 900,
+        "max lvl": "19"
+      },
+      {
+        "name": "Support team",
+        "perHour": "2.9K",
+        "cost": 290,
+        "max lvl": "20"
+      },
+      {
+        "name": "HamsterBook",
+        "perHour": "2.6K",
+        "cost": 260,
+        "max lvl": "19"
+      },
+      {
+        "name": "HamsterTube",
+        "perHour": "3.4K",
+        "cost": 340,
+        "max lvl": "19"
+      },
+      {
+        "name": "x",
+        "perHour": "3.0K",
+        "cost": 300,
+        "max lvl": "19"
+      },
+      {
+        "name": "Cointelegraph",
+        "perHour": "1.8K",
+        "cost": 180,
+        "max lvl": "21"
+      },
+      {
+        "name": "HamsterGram",
+        "perHour": "1.9K",
+        "cost": 190,
+        "max lvl": "19"
+      },
+      {
+        "name": "TikTok",
+        "perHour": "3.4K",
+        "cost": 340,
+        "max lvl": "18"
+      },
+      {
+        "name": "Coindesk",
+        "perHour": "2.7K",
+        "cost": 270,
+        "max lvl": "18"
+      },
+      {
+        "name": "Influensers",
+        "perHour": "9.2K",
+        "cost": 920,
+        "max lvl": "18"
+      },
+      {
+        "name": "Partnership program",
+        "perHour": "2.9K",
+        "cost": 290,
+        "max lvl": "20"
+      },
+      {
+        "name": "Product team",
+        "perHour": "3.7K",
+        "cost": 370,
+        "max lvl": "19"
+      },
+      {
+        "name": "BisDev team",
+        "perHour": "1.7K",
+        "cost": 170,
+        "max lvl": "18"
+      },
+      {
+        "name": "Two factor authentication",
+        "perHour": "5.1K",
+        "cost": 510,
+        "max lvl": "20"
+      },
+      {
+        "name": "UX and UI team",
+        "perHour": "5.9K",
+        "cost": 590,
+        "max lvl": "18"
+      },
+      {
+        "name": "Security team",
+        "perHour": "7.5K",
+        "cost": 750,
+        "max lvl": "19"
+      },
+      {
+        "name": "QA team",
+        "perHour": "6.4K",
+        "cost": 640,
+        "max lvl": "18"
+      },
+      {
+        "name": "Antihacking shield",
+        "perHour": "3.1K",
+        "cost": 310,
+        "max lvl": "16"
+      },
+      {
+        "name": "Risk management team",
+        "perHour": "9.0K",
+        "cost": 900,
+        "max lvl": "18"
+      },
+      {
+        "name": "Security Audition",
+        "perHour": "3.1K",
+        "cost": 310,
+        "max lvl": "17"
+      },
+      {
+        "name": "Anonymous transaction ban",
+        "perHour": "10.2K",
+        "cost": 1020,
+        "max lvl": "18"
+      },
+      {
+        "name": "Blocking suspicious accounts",
+        "perHour": "6.0K",
+        "cost": 600,
+        "max lvl": "19"
+      },
+      {
+        "name": "Tokenomics expert",
+        "perHour": "13.9K",
+        "cost": 1390,
+        "max lvl": "16"
+      },
+      {
+        "name": "Consensus Explorer pass",
+        "perHour": "37.6K",
+        "cost": 3760,
+        "max lvl": "15"
+      },
+      {
+        "name": "VC Labs",
+        "perHour": "13.9K",
+        "cost": 1390,
+        "max lvl": "16"
+      },
+      {
+        "name": "Compliance officer",
+        "perHour": "3.3K",
+        "cost": 330,
+        "max lvl": "16"
+      },
+      {
+        "name": "Welcome to Amsterdam",
+        "perHour": "9.1K",
+        "cost": 910,
+        "max lvl": "16"
+      },
+      {
+        "name": "Development Hub Mumbai",
+        "perHour": "111.5K",
+        "cost": 11150,
+        "max lvl": "16"
+      },
+      {
+        "name": "Data Center Tokyo",
+        "perHour": "181.3K",
+        "cost": 18130,
+        "max lvl": "16"
+      },
+      {
+        "name": "Leaderboards",
+        "perHour": "23.1K",
+        "cost": 2310,
+        "max lvl": "17"
+      },
+      {
+        "name": "Minigame",
+        "perHour": "27.9K",
+        "cost": 2790,
+        "max lvl": "16"
+      }
+    ],
+    "Specials": [
+      {
+        "name": "Youtube 1B views",
+        "perHour": "83.7K",
+        "cost": 8370,
+        "max lvl": "16"
+      },
+      {
+        "name": "Telegram Stars integration",
+        "perHour": "22.3K",
+        "cost": 2230,
+        "max lvl": "16"
+      },
+      {
+        "name": "Telegram Miniapp Launch",
+        "perHour": "27.9K",
+        "cost": 2790,
+        "max lvl": "16"
+      },
+      {
+        "name": "Seal Analytics",
+        "perHour": "50.3K",
+        "cost": 5030,
+        "max lvl": "15"
+      },
+      {
+        "name": "50M Telegram channel",
+        "perHour": "25.2K",
+        "cost": 2520,
+        "max lvl": "15"
+      },
+      {
+        "name": "SealStore launch",
+        "perHour": "125.6K",
+        "cost": 12560,
+        "max lvl": "15"
+      },
+      {
+        "name": "SealWatch for soulmate",
+        "perHour": "15.8K",
+        "cost": 1580,
+        "max lvl": "11"
+      },
+      {
+        "name": "Call for BTC to rise",
+        "perHour": "59.9K",
+        "cost": 5990,
+        "max lvl": "9"
+      },
+      {
+        "name": "Business jet",
+        "perHour": "3.0K",
+        "cost": 300,
+        "max lvl": "1"
+      },
+      {
+        "name": "CX Hub Istanbul",
+        "perHour": "75.4K",
+        "cost": 7540,
+        "max lvl": "15"
+      },
+      {
+        "name": "Seals break records",
+        "perHour": "49.2K",
+        "cost": 4920,
+        "max lvl": "12"
+      },
+      {
+        "name": "X Network 10 Million",
+        "perHour": "12.3K",
+        "cost": 1230,
+        "max lvl": "17"
+      },
+      {
+        "name": "Seal Green energy",
+        "perHour": "61.7K",
+        "cost": 6170,
+        "max lvl": "17"
+      },
+      {
+        "name": "YouTube 25 Million",
+        "perHour": "71.4K",
+        "cost": 7140,
+        "max lvl": "18"
+      },
+      {
+        "name": "TG Leaders",
+        "perHour": "70.9K",
+        "cost": 7090,
+        "max lvl": "17"
+      },
+      {
+        "name": "Premarket Launch",
+        "perHour": "118.3K",
+        "cost": 11830,
+        "max lvl": "11"
+      },
+      {
+        "name": "Seal Kombat merch",
+        "perHour": "3.1K",
+        "cost": 310,
+        "max lvl": "17"
+      },
+      {
+        "name": "TON + Seal Kombat = Success",
+        "perHour": "89.4K",
+        "cost": 8940,
+        "max lvl": "12"
+      },
+      {
+        "name": "Consensus Piranha Pass",
+        "perHour": "52.9K",
+        "cost": 5290,
+        "max lvl": "16"
+      },
+      {
+        "name": "Web3 academy launch",
+        "perHour": "45.8K",
+        "cost": 4580,
+        "max lvl": "17"
+      },
+      {
+        "name": "Youtube Gold Button",
+        "perHour": "9.4K",
+        "cost": 940,
+        "max lvl": "18"
+      },
+      {
+        "name": "Seal Youtube Channel",
+        "perHour": "8.5K",
+        "cost": 850,
+        "max lvl": "18"
+      },
+      {
+        "name": "Bitcoin Pizza Day",
+        "perHour": "3.4K",
+        "cost": 340,
+        "max lvl": "18"
+      },
+      {
+        "name": "Top 10 Global Ranking",
+        "perHour": "12.3K",
+        "cost": 1230,
+        "max lvl": "8"
+      },
+      {
+        "name": "NFT Collection Launch",
+        "perHour": "33.5K",
+        "cost": 3350,
+        "max lvl": "16"
+      },
+      {
+        "name": "Special Seal Conference",
+        "perHour": "30.5K",
+        "cost": 3050,
+        "max lvl": "18"
+      },
+      {
+        "name": "Short squeeze",
+        "perHour": "27.8K",
+        "cost": 2780,
+        "max lvl": "16"
+      },
+      {
+        "name": "There are two chairs…",
+        "perHour": "55.7K",
+        "cost": 5570,
+        "max lvl": "16"
+      },
+      {
+        "name": "Long squeeze",
+        "perHour": "55.7K",
+        "cost": 5570,
+        "max lvl": "16"
+      },
+      {
+        "name": "Villa for the DEV team",
+        "perHour": "15.3K",
+        "cost": 1530,
+        "max lvl": "18"
+      },
+      {
+        "name": "Apps Center Listing",
+        "perHour": "27.8K",
+        "cost": 2780,
+        "max lvl": "16"
+      },
+      {
+        "name": "Bogdanoff is calling",
+        "perHour": "14.6K",
+        "cost": 1460,
+        "max lvl": "17"
+      },
+      {
+        "name": "USDT on TON",
+        "perHour": "41.6K",
+        "cost": 4160,
+        "max lvl": "17"
+      },
+      {
+        "name": "250M Seal players",
+        "perHour": "18.0K",
+        "cost": 1800,
+        "max lvl": "9"
+      },
+      {
+        "name": "Ad contract with a football club",
+        "perHour": "0.0K",
+        "cost": 0,
+        "max lvl": "0"
+      },
+      {
+        "name": "Bitcoin Conference 2024",
+        "perHour": "72.9K",
+        "cost": 7290,
+        "max lvl": "15"
+      },
+      {
+        "name": "Blockchain Life 2024",
+        "perHour": "45.0K",
+        "cost": 4500,
+        "max lvl": "3"
+      },
+      {
+        "name": "Fight fight fight",
+        "perHour": "157.9K",
+        "cost": 15790,
+        "max lvl": "11"
+      },
+      {
+        "name": "Seal AI",
+        "perHour": "3.7K",
+        "cost": 370,
+        "max lvl": "5"
+      },
+      {
+        "name": "Seal Daily show",
+        "perHour": "0.2K",
+        "cost": 20,
+        "max lvl": "1"
+      },
+      {
+        "name": "Seals break records",
+        "perHour": "0.0K",
+        "cost": 0,
+        "max lvl": "0"
+      },
+      {
+        "name": "Seals tested the purity of the water",
+        "perHour": "67.7K",
+        "cost": 6770,
+        "max lvl": "14"
+      },
+      {
+        "name": "Kamala is calling",
+        "perHour": "97.6K",
+        "cost": 9760,
+        "max lvl": "16"
+      },
+      {
+        "name": "Notcoin listing",
+        "perHour": "8.1K",
+        "cost": 810,
+        "max lvl": "5"
+      },
+      {
+        "name": "Only 4 best left",
+        "perHour": "21.5K",
+        "cost": 2150,
+        "max lvl": "6"
+      },
+      {
+        "name": "Percussion taps",
+        "perHour": "18.0K",
+        "cost": 1800,
+        "max lvl": "9"
+      },
+      {
+        "name": "Quaterfinals are coming 1",
+        "perHour": "30.8K",
+        "cost": 3080,
+        "max lvl": "8"
+      },
+      {
+        "name": "Quaterfinals are coming 2",
+        "perHour": "30.8K",
+        "cost": 3080,
+        "max lvl": "8"
+      },
+      {
+        "name": "Riyadh Masters 2024",
+        "perHour": "53.7K",
+        "cost": 5370,
+        "max lvl": "12"
+      },
+      {
+        "name": "Semi-final England vs Netherlands",
+        "perHour": "36.0K",
+        "cost": 3600,
+        "max lvl": "9"
+      },
+      {
+        "name": "Semi-final Spain vs France",
+        "perHour": "41.5K",
+        "cost": 4150,
+        "max lvl": "10"
+      },
+      {
+        "name": "Sports integration",
+        "perHour": "36.0K",
+        "cost": 3600,
+        "max lvl": "9"
+      },
+      {
+        "name": "Sports integration 2",
+        "perHour": "26.0K",
+        "cost": 2600,
+        "max lvl": "7"
+      },
+      {
+        "name": "Sports integration 3",
+        "perHour": "75.4K",
+        "cost": 7540,
+        "max lvl": "15"
+      },
+      {
+        "name": "Strategic session in Australia",
+        "perHour": "55.3K",
+        "cost": 5530,
+        "max lvl": "11"
+      },
+      {
+        "name": "The final has come",
+        "perHour": "13.3K",
+        "cost": 1330,
+        "max lvl": "4"
+      },
+      {
+        "name": "Token 2049",
+        "perHour": "1.5K",
+        "cost": 150,
+        "max lvl": "1"
+      },
+      {
+        "name": "Venom Blockchain",
+        "perHour": "8.9K",
+        "cost": 890,
+        "max lvl": "5"
+      },
+      {
+        "name": "Web3 Game Con",
+        "perHour": "8.9K",
+        "cost": 890,
+        "max lvl": "5"
+      }
+    ],
+    "Web3": [
+      {
+        "name": "DEX",
+        "perHour": "75.4K",
+        "cost": 7540,
+        "max lvl": "15"
+      },
+      {
+        "name": "Oracle",
+        "perHour": "24.7K",
+        "cost": 2470,
+        "max lvl": "17"
+      },
+      {
+        "name": "Vesting Smartcontracts",
+        "perHour": "33.5K",
+        "cost": 3350,
+        "max lvl": "16"
+      },
+      {
+        "name": "Launchpad",
+        "perHour": "75.4K",
+        "cost": 7540,
+        "max lvl": "15"
+      },
+      {
+        "name": "NFT Marketplace",
+        "perHour": "50.3K",
+        "cost": 5030,
+        "max lvl": "15"
+      },
+      {
+        "name": "Grant for Developers",
+        "perHour": "123.4K",
+        "cost": 12340,
+        "max lvl": "17"
+      },
+      {
+        "name": "NFT Metaverse",
+        "perHour": "45.1K",
+        "cost": 4510,
+        "max lvl": "14"
+      },
+      {
+        "name": "Crypto Farming",
+        "perHour": "83.7K",
+        "cost": 8370,
+        "max lvl": "16"
+      },
+      {
+        "name": "Sport Collectibles Marketplace",
+        "perHour": "21.6K",
+        "cost": 2160,
+        "max lvl": "17"
+      },
+      {
+        "name": "Market Making",
+        "perHour": "18.5K",
+        "cost": 1850,
+        "max lvl": "17"
+      },
+      {
+        "name": "Web3 Advertising Platform",
+        "perHour": "12.3K",
+        "cost": 1230,
+        "max lvl": "17"
+      }
+    ]
+  },
+  "promoСodes": [
     {
-      "id": 1,
-      "name": ""
-    }
-  ],
-  "promoСodes":[
-    {
-      "id": 1,
+      "id": "1",
       "code": "ExterroSigma",
       "reward": 10000
-    },   
+    },
     {
-      "id": 2,
+      "id": "2",
       "code": "EXTERRO+1000JXRF",
       "reward": 10000
     },
     {
-      "id": 3,
+      "id": "3",
       "code": "",
       "reward": 10000
     },
     {
-      "id": 4,
+      "id": "4",
       "code": "",
       "reward": 10000
     },
     {
-      "id": 5,
+      "id": "5",
       "code": "SEAL2024",
-      "reward":10000
+      "reward": 10000
     }
   ]
 }

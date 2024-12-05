@@ -48,6 +48,20 @@
   outline: none;
 }
 
+#promoForm button {
+  cursor: pointer;
+  padding: 20px;
+  background-color: rgba(40, 116, 138, 0.6);
+  border-radius: 15px;
+  border: 0;
+  color: #fffefd;
+  font-weight: 600;
+  font-size: 12px;
+  transition: 1s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .main {
   background-color: #202227;
   color: #fffefd;
@@ -81,7 +95,7 @@
   line-height: 110%;
 }
 .main .user__info .user__avatar__name .user__avatar__img {
-  max-width: 70px;
+  max-width: 40px;
 }
 .main .user__info .user__avatar__name .user__avatar__img img {
   width: 100%;
@@ -163,14 +177,24 @@
   }
 }
 .main main .info .info-card span {
+  position: relative;
+  padding: 20px;
   color: #fffefd;
   padding-top: 8px;
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
 }
 .main main .info .info-card span img {
-  width: 15px;
+  position: absolute;
+  bottom: 2px;
+  width: 35px;
+}
+@media (max-width: 480px) {
+  .main main .info .info-card span img {
+    bottom: -2px;
+  }
 }
 .main main .total__coins {
   display: flex;
@@ -467,6 +491,92 @@
   }
 }
 
+#groupList {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 10px;
+  background-color: #2a2d32;
+  padding: 20px;
+}
+#groupList button {
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(40, 116, 138, 0.6);
+  border-radius: 10px;
+  border: 0;
+  color: #fffefd;
+  font-weight: 600;
+  font-size: 12px;
+  transition: 1s;
+}
+#groupList button:hover {
+  transition: 1s;
+  webkit-box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+}
+
+#cardsContainer {
+  max-height: 500px;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  gap: 10px;
+  margin-bottom: 50px;
+  max-width: 450px;
+}
+#cardsContainer .card {
+  max-width: 180px;
+  background-color: #32363c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  gap: 5px;
+  padding: 10px;
+  transition: 1s;
+}
+#cardsContainer .card:hover {
+  transition: 1s;
+  padding-bottom: 20px;
+  box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+}
+#cardsContainer .card img {
+  width: 70px;
+}
+#cardsContainer .card button {
+  cursor: pointer;
+  padding: 20px;
+  background-color: rgba(40, 116, 138, 0.6);
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 0;
+  color: #fffefd;
+  font-weight: 600;
+  font-size: 12px;
+  transition: 1s;
+}
+#cardsContainer .card button:hover {
+  transition: 1s;
+  webkit-box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
+}
+
 .registr__auth {
   background-color: #2c2f35;
   color: #fffefd;
@@ -481,7 +591,6 @@
   /*    flex-direction: row; */
 }
 .registr__auth main .politic {
-  padding-top: 50px;
   padding: 20px;
   position: absolute;
   z-index: 2;
@@ -490,9 +599,11 @@
   left: 24%;
   height: 500px;
   overflow-y: scroll;
-  display: none;
   background-color: #2c2f35;
   border-radius: 20px;
+}
+.registr__auth main .politic .politic-div {
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -1325,7 +1436,7 @@
   -moz-box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
   box-shadow: 0px 5px 10px 2px rgba(40, 116, 138, 0.2);
 }
-.friends main .friends-list {
+.friends main .friends #friends-list {
   max-width: 700px;
   margin: 0 auto;
   border-radius: 30px;
@@ -1341,27 +1452,31 @@
   -moz-box-shadow: -5px -5px 16px 21px rgba(40, 116, 138, 0.6);
   box-shadow: -5px -5px 16px 21px rgba(40, 116, 138, 0.6);
 }
-.friends main .friends-list .loginItem {
+.friends main .friends #friends-list .loginItem {
+  display: flex;
+  align-items: center;
   border-radius: 15px;
   margin-left: 20px;
   width: 60%;
+  padding: 10px;
+  gap: 5px;
   list-style: none;
   background-color: #202227;
 }
-.friends main .friends-list .loginItem img {
+.friends main .friends #friends-list .loginItem img {
   width: 30px;
 }
-.friends main .friends-list .loginItem .friend {
+.friends main .friends #friends-list .loginItem .friend {
   padding: 15px;
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 10px;
 }
-.friends main .friends-list .loginItem .friend #friend-name {
+.friends main .friends #friends-list .loginItem .friend #friend-name {
   font-size: 20px;
 }
-.friends main .friends-list .loginItem .friend img {
+.friends main .friends #friends-list .loginItem .friend img {
   width: 35px;
 }
 
