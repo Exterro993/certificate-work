@@ -139,7 +139,7 @@ function displayCardsByGroup(group, cards) {
   
 
 function updateUserCoinsAndEarnings() {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {
     coins: 0,
     earnPerHour: 0,
   };
@@ -149,26 +149,26 @@ function updateUserCoinsAndEarnings() {
     console.warn("Общий доход в час равен 0");
   }
 
-  currentUser.earnPerHour = totalEarningsPerHour;
+  userData.earnPerHour = totalEarningsPerHour;
 
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  localStorage.setItem("userData", JSON.stringify(userData));
 
   const coinsElement = document.getElementById("user-coins");
   if (coinsElement) {
-    coinsElement.textContent = `Монеты: ${currentUser.coins}`;
+    coinsElement.textContent = `Монеты: ${userData.coins}`;
   }
 
   const earningsElement = document.getElementById("total-earnings");
   if (earningsElement) {
     earningsElement.textContent = `Общий доход в час: ${formatNum(
-      currentUser.earnPerHour
+      userData.earnPerHour
     )} монет`;
   }
 }
 
 function upgradeCard(group, title, upgradePrice, perHour) {
   const savedData = JSON.parse(localStorage.getItem("userCardsData"));
-  let currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
+  let userData = JSON.parse(localStorage.getItem("userData")) || {
     coins: 0,
     earnPerHour: 0,
   };
@@ -177,13 +177,13 @@ function upgradeCard(group, title, upgradePrice, perHour) {
   if (cardIndex !== -1) {
     const card = savedData[group][cardIndex];
 
-    if (currentUser.coins >= upgradePrice) {
+    if (userData.coins >= upgradePrice) {
       savedData[group][cardIndex].level += 1;
 
-      currentUser.coins -= upgradePrice;
+      userData.coins -= upgradePrice;
 
       localStorage.setItem("userCardsData", JSON.stringify(savedData));
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      localStorage.setItem("userData", JSON.stringify(userData));
 
       displayCardsByGroup(group, savedData[group]);
 
@@ -196,24 +196,24 @@ function upgradeCard(group, title, upgradePrice, perHour) {
 
 function startCoinEarnings() {
     setInterval(() => {
-      const currentUser = JSON.parse(localStorage.getItem("currentUser")) || { coins: 0, earnPerHour: 0 };
-      const earningsPerSecond = currentUser.earnPerHour / 3600;
+      const userData = JSON.parse(localStorage.getItem("userData")) || { coins: 0, earnPerHour: 0 };
+      const earningsPerSecond = userData.earnPerHour / 3600;
   
     //   console.log(`Доход в секунду: ${earningsPerSecond.toFixed(2)} монет`); 
   
       if (earningsPerSecond > 0) {
         const addedCoins = Math.round(earningsPerSecond * 100) / 100;
   
-        currentUser.coins += addedCoins;
+        userData.coins += addedCoins;
   
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        localStorage.setItem("userData", JSON.stringify(userData));
   
         const coinsElement = document.getElementById("user-coins");
         if (coinsElement) {
-          coinsElement.textContent = `Монеты: ${currentUser.coins.toFixed(2)}`;
+          coinsElement.textContent = `Монеты: ${userData.coins.toFixed(2)}`;
         }
   
-        // console.log(`Добавлено монет: ${addedCoins.toFixed(2)}, Общее количество монет: ${currentUser.coins.toFixed(2)}`); // Отладка
+        // console.log(`Добавлено монет: ${addedCoins.toFixed(2)}, Общее количество монет: ${userData.coins.toFixed(2)}`); // Отладка
       } else {
         console.warn("Доход в секунду равен 0 или меньше");
       }
@@ -222,7 +222,7 @@ function startCoinEarnings() {
     
 
 function updateUserCoinsAndEarnings() {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {
     coins: 0,
     earnPerHour: 0,
   };
@@ -232,23 +232,23 @@ function updateUserCoinsAndEarnings() {
     console.warn("Общий доход в час равен 0");
   }
 
-  currentUser.earnPerHour = totalEarningsPerHour;
+  userData.earnPerHour = totalEarningsPerHour;
 
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  localStorage.setItem("userData", JSON.stringify(userData));
 
   const coinsElement = document.getElementById("user-coins");
   if (coinsElement) {
-    coinsElement.textContent = `Монеты: ${currentUser.coins}`;
+    coinsElement.textContent = `Монеты: ${userData.coins}`;
   }
 
   const earningsElement = document.getElementById("total-earnings");
   if (earningsElement) {
     earningsElement.textContent = `Общий доход в час: ${formatNum(
-      currentUser.earnPerHour
+      userData.earnPerHour
     )} монет`;
   }
 
-  console.log(`Обновленный общий доход в час: ${currentUser.earnPerHour}`);
+  console.log(`Обновленный общий доход в час: ${userData.earnPerHour}`);
 }
 
 function calculateTotalEarnings() {
@@ -302,16 +302,16 @@ function calculateTotalEarnings() {
 }
 
 function initializeCoinsAndEarnings() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || { coins: 0, earnPerHour: 0 };
+    const userData = JSON.parse(localStorage.getItem("userData")) || { coins: 0, earnPerHour: 0 };
   
-    if (!currentUser.coins) {
-      currentUser.coins = 0;
+    if (!userData.coins) {
+      userData.coins = 0;
     }
-    if (!currentUser.earnPerHour) {
-      currentUser.earnPerHour = calculateTotalEarnings();
+    if (!userData.earnPerHour) {
+      userData.earnPerHour = calculateTotalEarnings();
     }
   
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    localStorage.setItem("userData", JSON.stringify(userData));
     updateUserCoinsAndEarnings();
   }
   
@@ -320,146 +320,67 @@ startCoinEarnings();
 
 
 window.addEventListener("beforeunload", () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {
     coins: 0,
     earnPerHour: 0,
   };
-  currentUser.lastVisit = Date.now(); 
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  userData.lastVisit = Date.now(); 
+  localStorage.setItem("userData", JSON.stringify(userData));
 });
 
 fetchCardsData();
-function initializeCoinsAndEarnings() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || { coins: 0, earnPerHour: 0 };
-  
-    if (!currentUser.coins) {
-      currentUser.coins = 0;
-    }
-  
-    if (!currentUser.earnPerHour) {
-      currentUser.earnPerHour = calculateTotalEarnings();
-    }
-  
-    const lastVisit = currentUser.lastVisit || Date.now();
-    const currentTime = Date.now();
-    const timeDifference = currentTime - lastVisit;
-    const timeDifferenceInHours = timeDifference / 3600000;
-  
-    const earnedCoins = Math.floor(currentUser.earnPerHour * timeDifferenceInHours);
-  
-    currentUser.coins += earnedCoins;
-  
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    updateUserCoinsAndEarnings(); 
+// Функция для сохранения времени выхода пользователя
+function saveExitTime() {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {};
+  userData.lastVisit = Date.now(); // Сохраняем текущее время как время выхода
+  localStorage.setItem("userData", JSON.stringify(userData)); // Обновляем данные в localStorage
+}
+
+// Функция для подсчета монет за время отсутствия
+// Функция для сохранения времени выхода и расчёта монет за время отсутствия
+function handleUserExitAndEarnings() {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {};
+
+  // Сохраняем текущее время как время выхода
+  const lastVisitTime = userData.lastVisit || Date.now();
+  const currentTime = Date.now();
+
+  // Вычисляем разницу во времени (в секундах)
+  const offlineSeconds = Math.floor((currentTime - lastVisitTime) / 1000);
+
+  // Рассчитываем доход в секунду
+  const earningsPerSecond = (userData.earnPerHour || 0) / 3600;
+
+  // Вычисляем заработанные монеты за время отсутствия
+  const coinsEarned = Math.floor(offlineSeconds * earningsPerSecond);
+
+  // Обновляем данные пользователя
+  userData.coins = (userData.coins || 0) + coinsEarned;
+  userData.lastVisit = currentTime; // Обновляем время последнего визита
+  localStorage.setItem("userData", JSON.stringify(userData));
+
+  // Показываем пользователю уведомление о заработке
+  if (coinsEarned > 0) {
+    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
   }
+
+  return userData; // Возвращаем обновлённые данные
+}
+
+// Добавляем обработчик на закрытие вкладки
+window.addEventListener("beforeunload", (event) => {
+  const confirmationMessage = "Вы уверены, что хотите выйти? Ваш прогресс будет сохранён.";
   
-  function updateUserCoinsAndEarnings() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || { coins: 0, earnPerHour: 0 };
-  
-    const totalEarningsPerHour = calculateTotalEarnings();
-    if (totalEarningsPerHour === 0) {
-      console.warn("Общий доход в час равен 0");
-    }
-  
-    currentUser.earnPerHour = totalEarningsPerHour;
-  
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  
-    const coinsElement = document.getElementById("user-coins");
-    if (coinsElement) {
-      coinsElement.textContent = `Монеты: ${currentUser.coins}`;
-    }
-  
-    const earningsElement = document.getElementById("total-earnings");
-    if (earningsElement) {
-      earningsElement.textContent = `Общий доход в час: ${formatNum(currentUser.earnPerHour)} монет`;
-    }
+  // Отображаем системное уведомление (браузерное)
+  event.returnValue = confirmationMessage;
+
+  // Показываем пользовательское подтверждение
+  const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+  if (userConfirmed) {
+    handleUserExitAndEarnings(); // Сохранить данные и рассчитать заработок
+  } else {
+    event.preventDefault(); // Блокируем закрытие вкладки
   }
-  
-  window.addEventListener("beforeunload", () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
-      coins: 0,
-      earnPerHour: 0,
-    };
-  
-    currentUser.lastVisit = Date.now();
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(currentUser),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Данные успешно сохранены на сервере", data);
-      })
-      .catch(error => {
-        console.error("Ошибка при сохранении данных на сервере", error);
-      });
-  });
-  
-  initializeCoinsAndEarnings();
-  
-  
-  
-function getRandomCards() {
-    const allCards = document.querySelectorAll('.card');
-    console.log('Количество карточек в контейнере:', allCards.length);
-  
-    if (allCards.length < 3) {
-      console.error('Недостаточно карточек для выбора!');
-      return [];
-    }
-  
-    const randomCards = [];
-    const indices = new Set(); 
-  
-    while (randomCards.length < 3) {
-      const randomIndex = Math.floor(Math.random() * allCards.length);
-      if (!indices.has(randomIndex)) {
-        indices.add(randomIndex);
-        randomCards.push(allCards[randomIndex].cloneNode(true)); 
-      }
-    }
-  
-    return randomCards;
-  }
-  
-  function displayRandomCards() {
-    const comboContainer = document.getElementById('combo');
-    
-    if (!comboContainer) {
-      console.error('Контейнер #combo не найден!');
-      return; 
-    }
-  
-    comboContainer.innerHTML = ''; 
-  
-    const randomCards = getRandomCards();
-  
-    if (randomCards.length === 0) {
-      console.warn('Не удалось выбрать карточки.');
-      return; 
-    }
-  
-    randomCards.forEach(card => {
-      comboContainer.appendChild(card);
-    });
-  
-    randomCards.forEach((card, index) => {
-      anime({
-        targets: card,
-        opacity: 1,
-        translateY: [30, 0], 
-        easing: 'easeOutExpo',
-        duration: 800,
-        delay: index * 100 
-      });
-    });
-  }
-  
-  document.addEventListener('DOMContentLoaded', displayRandomCards);
-  
+});
+
+// localStorage.clear()

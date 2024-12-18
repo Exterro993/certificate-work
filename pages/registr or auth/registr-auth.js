@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (user) {
-        if (!user.status) {
+        if (user.banned) {
           // Если пользователь имеет статус "false", перенаправляем на страницу для неактивных пользователей
           alert("Ваш аккаунт деактивирован. Вы будете перенаправлены.");
           window.location.href = "../ban/ban.html";
         } else {
           // Если пользователь имеет статус "true", сохраняем его данные в localStorage и переходим на главную страницу
-          localStorage.setItem("currentUser", JSON.stringify(user));
+          localStorage.setItem("userData", JSON.stringify(user));
           alert("Успешный вход!");
           window.location.href = "../main/main.html";
         }
@@ -357,11 +357,8 @@ document.addEventListener("DOMContentLoaded", () => {
         password: passwordValue,
         email: RegUserEmail.value.trim(),
         exchange: exchangeSelect.value,
-        status: true,
         title: title,
-        coins: 0,
-        energy: 10000,
-        earnPerHour: 0,
+        banned: false
       };
 
       await sendData(userData);

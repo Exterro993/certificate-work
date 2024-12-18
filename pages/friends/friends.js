@@ -102,3 +102,50 @@ document.addEventListener('DOMContentLoaded', () => {
   displayFriends();
   document.getElementById('add-friend-button').addEventListener('click', addFriend);
 });
+
+
+// Функция для сохранения времени выхода и расчёта монет за время отсутствия
+function handleUserExitAndEarnings() {
+  const userData = JSON.parse(localStorage.getItem("userData")) || {};
+
+  // Сохраняем текущее время как время выхода
+  const lastVisitTime = userData.lastVisit || Date.now();
+  const currentTime = Date.now();
+
+  // Вычисляем разницу во времени (в секундах)
+  const offlineSeconds = Math.floor((currentTime - lastVisitTime) / 1000);
+
+  // Рассчитываем доход в секунду
+  const earningsPerSecond = (userData.earnPerHour || 0) / 3600;
+
+  // Вычисляем заработанные монеты за время отсутствия
+  const coinsEarned = Math.floor(offlineSeconds * earningsPerSecond);
+
+  // Обновляем данные пользователя
+  userData.coins = (userData.coins || 0) + coinsEarned;
+  userData.lastVisit = currentTime; // Обновляем время последнего визита
+  localStorage.setItem("userData", JSON.stringify(userData));
+
+  // Показываем пользователю уведомление о заработке
+  if (coinsEarned > 0) {
+    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
+  }
+
+  return userData; // Возвращаем обновлённые данные
+}
+
+// Добавляем обработчик на закрытие вкладки
+window.addEventListener("beforeunload", (event) => {
+  const confirmationMessage = "Вы уверены, что хотите выйти? Ваш прогресс будет сохранён.";
+  
+  // Отображаем системное уведомление (браузерное)
+  event.returnValue = confirmationMessage;
+
+  // Показываем пользовательское подтверждение
+  const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+  if (userConfirmed) {
+    handleUserExitAndEarnings(); // Сохранить данные и рассчитать заработок
+  } else {
+    event.preventDefault(); // Блокируем закрытие вкладки
+  }
+});
