@@ -1,6 +1,7 @@
 // Путь к серверу для получения данных пользователей, карт и промокодов
 const usersUrl = 'http://localhost:5000/users';
-
+import { createModal } from "../../modal.js";
+import { createConfirmModal } from "../../modal.js";
 // Получение всех пользователей
 async function getUsers() {
   try {
@@ -8,10 +9,11 @@ async function getUsers() {
     return response.data; // Данные о пользователях
   } catch (error) {
     console.error('Ошибка при загрузке данных пользователей:', error);
-    alert('Ошибка при загрузке данных. Попробуйте снова позже.');
+    createModal('Ошибка при загрузке данных. Попробуйте снова позже.');
   }
 }
 
+// Добавление друга
 // Добавление друга
 async function addFriend(event) {
   event.preventDefault(); // Предотвращаем перезагрузку страницы
@@ -20,7 +22,20 @@ async function addFriend(event) {
   const friendLogin = friendInput.value.trim();
 
   if (!friendLogin) {
-    alert("Введите логин друга.");
+    createModal("Введите логин друга.");
+    return;
+  }
+
+  // Получаем текущего пользователя
+  const currentUser = localStorage.getItem("currentUser");
+
+  if (!currentUser) {
+    createModal("Не удалось определить текущего пользователя.");
+    return;
+  }
+
+  if (friendLogin === currentUser) {
+    createModal("Вы не можете добавить себя в друзья.");
     return;
   }
 
@@ -28,7 +43,7 @@ async function addFriend(event) {
   const users = await getUsers();
 
   if (!users) {
-    alert("Не удалось получить список пользователей.");
+    createModal("Не удалось получить список пользователей.");
     return;
   }
 
@@ -36,7 +51,7 @@ async function addFriend(event) {
   const friend = users.find(user => user.login === friendLogin);
 
   if (!friend) {
-    alert("Пользователь с таким логином не найден.");
+    createModal("Пользователь с таким логином не найден.");
     return;
   }
 
@@ -45,7 +60,7 @@ async function addFriend(event) {
 
   // Проверяем, что друг еще не добавлен
   if (currentFriends.some(f => f.login === friend.login)) {
-    alert("Этот пользователь уже добавлен в друзья.");
+    createModal("Этот пользователь уже добавлен в друзья.");
     return;
   }
 
@@ -64,6 +79,7 @@ async function addFriend(event) {
   // Обновляем список друзей на странице
   displayFriends();
 }
+
 
 // Отображение списка друзей
 function displayFriends() {
@@ -128,7 +144,7 @@ function handleUserExitAndEarnings() {
 
   // Показываем пользователю уведомление о заработке
   if (coinsEarned > 0) {
-    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
+    createModal(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
   }
 
   return userData; // Возвращаем обновлённые данные
@@ -142,7 +158,7 @@ window.addEventListener("beforeunload", (event) => {
   event.returnValue = confirmationMessage;
 
   // Показываем пользовательское подтверждение
-  const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+  const userConfirmed = createConfirmModal('Вы уверенны что хотите выйти?');
   if (userConfirmed) {
     handleUserExitAndEarnings(); // Сохранить данные и рассчитать заработок
   } else {

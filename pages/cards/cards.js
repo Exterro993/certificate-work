@@ -1,5 +1,6 @@
 const groupList = document.getElementById("groupList");
 const cardsContainer = document.getElementById("cardsContainer");
+import { createConfirmModal, createModal } from "../../modal.js";
 const apiUrl = "http://localhost:5000/cards"; 
 if (!groupList || !cardsContainer) {
   console.error("Элементы groupList или cardsContainer не найдены в DOM");
@@ -78,64 +79,50 @@ function parseValue(value) {
   return value;
 }
 
-function calculateTotalEarnings() {
-  const savedData = JSON.parse(localStorage.getItem("userCardsData")) || {};
-  if (!savedData || Object.keys(savedData).length === 0) {
-    console.warn("Нет данных о карточках для расчета дохода");
-    return 0;
-  }
-
-  let totalEarningsPerHour = 0;
-
-  Object.values(savedData).forEach((group) => {
-    group.forEach((card) => {
-      const perHour = parseValue(card.perHour);
-      totalEarningsPerHour += calculateCurrentEarnings(
-        card.level || 0,
-        card.maxLvl || 1,
-        perHour
-      );
-    });
-  });
-
-  return totalEarningsPerHour;
-}
 
 function displayCardsByGroup(group, cards) {
-    // console.log(group, cards); 
-    if (!cards || cards.length === 0) {
-      console.warn(`Нет карточек в группе ${group}`);
-      return;
-    }
-  console.log(group);
-  console.log(cards);
-  
-    cardsContainer.innerHTML = "";
-  
-    cards.forEach((card) => {
-      const perHour = parseValue(card.perHour);
-  
-      const currentEarningsPerHour = calculateCurrentEarnings(
-        card.level || 0,
-        card.maxLvl || 1,
-        perHour
-      );
-  
-      const cardElement = document.createElement("div");
-      cardElement.classList.add("card");
-      cardElement.innerHTML = `
-        <img src="../../images/nav/airdrop.png" alt="Card Image">
-        <div class="card-content">
-            <h3>${card.name}</h3>
-            <p>Уровень: ${card.level}</p>
-            <p>Цена улучшения: ${card.cost} монет</p>
-            <p>Текущий доход в час: ${formatNum(currentEarningsPerHour)} монет</p>
-            <button class="upgrade-btn" onclick="upgradeCard('${group}', '${card.name}', ${card.cost}, ${perHour})">Прокачать</button>
-        </div>
-    `;
-      cardsContainer.appendChild(cardElement);
-    });
+  if (!cards || cards.length === 0) {
+    console.warn(`Нет карточек в группе ${group}`);
+    return;
   }
+
+  cardsContainer.innerHTML = "";
+
+  cards.forEach((card) => {
+    const perHour = parseValue(card.perHour);
+
+    const currentEarningsPerHour = calculateCurrentEarnings(
+      card.level || 0,
+      card.maxLvl || 1,
+      perHour
+    );
+
+    const cardElement = document.createElement("div");
+    cardElement.classList.add("card");
+    cardElement.innerHTML = `
+      <img src="../../images/nav/airdrop.png" alt="Card Image">
+      <div class="card-content">
+          <h3>${card.name}</h3>
+          <p>Уровень: ${card.level}</p>
+          <p>Цена улучшения: ${card.cost} монет</p>
+          <p>Текущий доход в час: ${formatNum(currentEarningsPerHour)} монет</p>
+      </div>
+    `;
+
+    const upgradeButton = document.createElement("button");
+    upgradeButton.classList.add("upgrade-btn");
+    upgradeButton.textContent = "Прокачать";
+
+    // Добавляем обработчик события
+    upgradeButton.addEventListener("click", () => {
+      upgradeCard(group, card.name, card.cost, perHour);
+    });
+
+    cardElement.querySelector(".card-content").appendChild(upgradeButton);
+    cardsContainer.appendChild(cardElement);
+  });
+}
+
   
 
 function updateUserCoinsAndEarnings() {
@@ -189,7 +176,7 @@ function upgradeCard(group, title, upgradePrice, perHour) {
 
       updateUserCoinsAndEarnings();
     } else {
-      alert("Недостаточно монет для улучшения этой карточки!");
+      createModal('Недостаточно монет для прокачки этой карточки!')
     }
   }
 }
@@ -221,60 +208,9 @@ function startCoinEarnings() {
   }
     
 
-function updateUserCoinsAndEarnings() {
-  const userData = JSON.parse(localStorage.getItem("userData")) || {
-    coins: 0,
-    earnPerHour: 0,
-  };
 
-  const totalEarningsPerHour = calculateTotalEarnings();
-  if (totalEarningsPerHour === 0) {
-    console.warn("Общий доход в час равен 0");
-  }
 
-  userData.earnPerHour = totalEarningsPerHour;
 
-  localStorage.setItem("userData", JSON.stringify(userData));
-
-  const coinsElement = document.getElementById("user-coins");
-  if (coinsElement) {
-    coinsElement.textContent = `Монеты: ${userData.coins}`;
-  }
-
-  const earningsElement = document.getElementById("total-earnings");
-  if (earningsElement) {
-    earningsElement.textContent = `Общий доход в час: ${formatNum(
-      userData.earnPerHour
-    )} монет`;
-  }
-
-  console.log(`Обновленный общий доход в час: ${userData.earnPerHour}`);
-}
-
-function calculateTotalEarnings() {
-    const savedData = JSON.parse(localStorage.getItem("userCardsData")) || {};
-    if (!savedData || Object.keys(savedData).length === 0) {
-      console.warn("Нет данных о карточках для расчета дохода");
-      return 0;
-    }
-  
-    let totalEarningsPerHour = 0;
-  
-    Object.values(savedData).forEach((group) => {
-      group.forEach((card) => {
-        const perHour = parseValue(card.perHour);
-        totalEarningsPerHour += calculateCurrentEarnings(
-          card.level || 0,
-          card.maxLvl || 1,
-          perHour
-        );
-      });
-    });
-  
-    console.log(`Общий доход в час (после расчета): ${totalEarningsPerHour}`); 
-  
-    return totalEarningsPerHour;
-  }
   
 function calculateTotalEarnings() {
   const savedData = JSON.parse(localStorage.getItem("userCardsData")) || {};
@@ -361,7 +297,7 @@ function handleUserExitAndEarnings() {
 
   // Показываем пользователю уведомление о заработке
   if (coinsEarned > 0) {
-    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
+    createModal(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`)
   }
 
   return userData; // Возвращаем обновлённые данные
@@ -375,12 +311,10 @@ window.addEventListener("beforeunload", (event) => {
   event.returnValue = confirmationMessage;
 
   // Показываем пользовательское подтверждение
-  const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+  const userConfirmed = createConfirmModal("Вы уверены, что хотите выйти?");
   if (userConfirmed) {
     handleUserExitAndEarnings(); // Сохранить данные и рассчитать заработок
   } else {
     event.preventDefault(); // Блокируем закрытие вкладки
   }
 });
-
-// localStorage.clear()

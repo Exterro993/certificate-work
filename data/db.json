@@ -10,7 +10,7 @@
       "banned": false,
       "lastVisitTime": 1734088828228,
       "energy": 10000,
-      "coins": 773.1941666666916,
+      "coins": 7703.194166666692,
       "earnPerHour": 213,
       "lastUpdate": 1734088825563,
       "lastVisit": 1734088642470
@@ -21,12 +21,14 @@
       "password": "398393939D#s",
       "email": "exterro@mail.ru",
       "exchange": "cryptoCom",
-      "title": "admin",
+      "title": "user",
       "banned": false,
-      "lastVisitTime": 1734516842173,
+      "lastVisitTime": 1734611434307,
       "energy": 10000,
-      "coins": 0,
-      "earnPerHour": 0
+      "coins": 23,
+      "earnPerHour": 0,
+      "lastVisit": 1734517166728,
+      "lastUpdate": 1734611540880
     }
   ],
   "cards": {

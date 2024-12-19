@@ -1,4 +1,7 @@
 // Проверка наличия данных о пользователе в localStorage
+import { createModal } from "../../modal.js";
+import { createConfirmModal } from "../../modal.js";
+
 if (!localStorage.getItem('userData')) {
     localStorage.setItem('userData', JSON.stringify({
       "id": "9e38",
@@ -48,15 +51,15 @@ if (!localStorage.getItem('userData')) {
     if (promoCode) {
       // Проверка, использован ли промокод
       if (userData.usedPromoCodes.includes(promoCode.code)) {
-        alert('Этот промокод уже был использован.');
+        createModal('Этот промокод уже был использован.');
       } else {
         userData.coins += promoCode.reward;  // Добавление монет пользователю
         userData.usedPromoCodes.push(promoCode.code);  // Добавление использованного промокода
         saveUserData(userData);  // Сохранение обновлённого состояния
-        alert(`Промокод применён. Вы получили ${promoCode.reward} монет.`);
+        createModal(`Промокод применён. Вы получили ${promoCode.reward} монет.`)
       }
     } else {
-      alert('Неверный промокод.');
+      createModal('Неверный промокод.');
     }
   }
   
@@ -92,7 +95,7 @@ function handleUserExitAndEarnings() {
 
   // Показываем пользователю уведомление о заработке
   if (coinsEarned > 0) {
-    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
+    createModal(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
   }
 
   return userData; // Возвращаем обновлённые данные
@@ -106,10 +109,12 @@ window.addEventListener("beforeunload", (event) => {
   event.returnValue = confirmationMessage;
 
   // Показываем пользовательское подтверждение
-  const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+  const userConfirmed = createConfirmModal("Вы уверены, что хотите выйти?");
   if (userConfirmed) {
     handleUserExitAndEarnings(); // Сохранить данные и рассчитать заработок
   } else {
     event.preventDefault(); // Блокируем закрытие вкладки
   }
 });
+
+

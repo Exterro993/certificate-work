@@ -3,6 +3,38 @@
   color: #fffefd;
   font-family: "Roboto";
   background-image: url("../../images/about/bg.png");
+  img{
+    width: 30px;
+  }
+  .loginItem {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-left: 20px;
+    width: 60%;
+    padding: 10px;
+    gap: 5px;
+    list-style: none;
+    background-color: #202227;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+    .friend {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 10px;
+      #friend-name {
+        font-size: 20px;
+      }
+      img {
+        width: 35px;
+      }
+    }
+  }
   main {
     margin-bottom: 50px;
     .friends {
@@ -70,6 +102,7 @@
         max-width: 700px;
         margin: 0 auto;
         border-radius: 30px;
+      
         padding-top: 20px;
         padding-bottom: 20px;
         display: flex;
@@ -81,33 +114,7 @@
         -webkit-box-shadow: -5px -5px 16px 21px rgba(40, 116, 138, 0.6);
         -moz-box-shadow: -5px -5px 16px 21px rgba(40, 116, 138, 0.6);
         box-shadow: -5px -5px 16px 21px rgba(40, 116, 138, 0.6);
-        .loginItem {
-          display: flex;
-          align-items:center;
-          border-radius: 15px;
-          margin-left: 20px;
-          width: 60%;
-          padding: 10px;
-          gap: 5px;
-          list-style: none;
-          background-color: #202227;
-          img{
-            width: 30px;
-          }
-          .friend {
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            gap: 10px;
-            #friend-name {
-              font-size: 20px;
-            }
-            img {
-              width: 35px;
-            }
-          }
-        }
+        
       }
     }
   }

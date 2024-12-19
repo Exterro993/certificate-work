@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Registr</title>
+    <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="../../images/nav/airdrop.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -16,11 +16,13 @@
   </head>
   <body class="admin">
     <h1 class="welcome">Дорбро пожаловать на Админ страницу!</h1>
+    <!-- <h1>Таблица пользователей</h1> -->
     <h1 style="text-align: center; margin-top: 50px;margin-bottom: 50px;">Таблица пользователей</h1>
   <table>
     <thead>
       <tr>
         <th>Никнейм</th>
+        <th>Статус</th>
         <th>Титул</th>
         <th>Монеты</th>
       </tr>
@@ -29,6 +31,9 @@
       <!-- Данные пользователей будут добавляться сюда -->
     </tbody>
   </table>
+  <button id="back_to_main">
+    Вернуться ->
+  </button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script type="module" src="./admin.js"></script>
   </body>

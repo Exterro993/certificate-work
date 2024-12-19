@@ -5,27 +5,28 @@ const replaceBtn2 = document.querySelector(".to__registr");
 const polit_div = document.querySelector(".politic-div");
 const politicBtn = document.querySelector(".politicBtn");
 const politicBtnBack = document.querySelector(".politicBtnBack");
-const forms__container = document.querySelector('.forms-container')
+const forms__container = document.querySelector(".forms-container");
+import { createModal } from "../../modal.js";
 // const body = document.querySelector("body")
 anime({
   targets: ".politic",
   translateY: -700,
   delay: 2,
 });
-politicBtnBack.addEventListener("click",()=>{
-  forms__container.style.filter = "blur(0px)"
+politicBtnBack.addEventListener("click", () => {
+  forms__container.style.filter = "blur(0px)";
   anime({
     targets: ".politic",
     translateY: -700,
     delay: 2,
   });
   setTimeout(() => {
-    polit_div.style.display = 'none'
+    polit_div.style.display = "none";
   }, 1000);
-})
+});
 politicBtn.addEventListener("click", () => {
   polit_div.style.display = "flex";
-  forms__container.style.filter = "blur(5px)"
+  forms__container.style.filter = "blur(5px)";
   // setTimeout(() => {
 
   // }, 1000);
@@ -37,20 +38,21 @@ politicBtn.addEventListener("click", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   if (registr) {
-    replaceBtn.click()
-    replaceBtn2.click()
+    replaceBtn.click();
+    replaceBtn2.click();
   }
   const authForm = document.getElementById("auth");
   const authErrorDiv = document.querySelector(".auth-error");
   const authLoginInput = document.querySelector(".auth-login");
   const authEmailInput = document.querySelector(".auth-email");
   const authPasswordInput = document.querySelector("#auth-password");
-  const authPasswordInputView = document.querySelector('#view__password-auth')
+  const authPasswordInputView = document.querySelector("#view__password-auth");
   authPasswordInputView.addEventListener("click", () => {
     // const passwordInp = document.querySelector("#password");
     // click.preventdefault
     event.preventDefault();
-    authPasswordInput.type = authPasswordInput.type === "password" ? "text" : "password";
+    authPasswordInput.type =
+      authPasswordInput.type === "password" ? "text" : "password";
   });
   // Функция для отображения ошибок
   const showAuthError = (message) => {
@@ -71,12 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (user) {
         if (user.banned) {
           // Если пользователь имеет статус "false", перенаправляем на страницу для неактивных пользователей
-          alert("Ваш аккаунт деактивирован. Вы будете перенаправлены.");
           window.location.href = "../ban/ban.html";
         } else {
           // Если пользователь имеет статус "true", сохраняем его данные в localStorage и переходим на главную страницу
           localStorage.setItem("userData", JSON.stringify(user));
-          alert("Успешный вход!");
+          createModal("Успешный вход!");
           window.location.href = "../main/main.html";
         }
       } else {
@@ -197,8 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       return !users.some((user) => user.password === password.trim());
     } catch (error) {
-      console.error("Ошибка при проверке пароля на уникальность:", error.message);
-      alert("Ошибка при проверке пароля на уникальность");
+      console.error(
+        "Ошибка при проверке пароля на уникальность:",
+        error.message
+      );
+      createModal("Ошибка при проверке пароля на уникальность");
       return false;
     }
   };
@@ -225,13 +229,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (passwordValue.length < 8) {
       errorMessages.push("Пароль должен быть не менее 8 символов");
     } else if (!/[A-Z]/.test(passwordValue)) {
-      errorMessages.push("Пароль должен содержать хотя бы одну заглавную букву");
+      errorMessages.push(
+        "Пароль должен содержать хотя бы одну заглавную букву"
+      );
     } else if (!/[a-z]/.test(passwordValue)) {
       errorMessages.push("Пароль должен содержать хотя бы одну строчную букву");
     } else if (!/\d/.test(passwordValue)) {
       errorMessages.push("Пароль должен содержать хотя бы одну цифру");
     } else if (!/[@#$%^&*()_+!]/.test(passwordValue)) {
-      errorMessages.push("Пароль должен содержать хотя бы один специальный символ");
+      errorMessages.push(
+        "Пароль должен содержать хотя бы один специальный символ"
+      );
     }
 
     return errorMessages;
@@ -266,28 +274,36 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loginTouched) {
       const loginErrors = checkLogin();
       if (loginErrors.length > 0) {
-        errorMessages += `<div class="errors-div"><p>${loginErrors.join("<br>")}</p></div>`;
+        errorMessages += `<div class="errors-div"><p>${loginErrors.join(
+          "<br>"
+        )}</p></div>`;
       }
     }
 
     if (passwordTouched) {
       const passwordErrors = checkPassword();
       if (passwordErrors.length > 0) {
-        errorMessages += `<div class="errors-div"><p>${passwordErrors.join("<br>")}</p></div>`;
+        errorMessages += `<div class="errors-div"><p>${passwordErrors.join(
+          "<br>"
+        )}</p></div>`;
       }
     }
 
     if (rePasswordTouched) {
       const rePasswordErrors = checkRePassword();
       if (rePasswordErrors.length > 0) {
-        errorMessages += `<div class="errors-div"><p>${rePasswordErrors.join("<br>")}</p></div>`;
+        errorMessages += `<div class="errors-div"><p>${rePasswordErrors.join(
+          "<br>"
+        )}</p></div>`;
       }
     }
 
     if (emailTouched) {
       const emailErrors = checkEmail();
       if (emailErrors.length > 0) {
-        errorMessages += `<div class="errors-div"><p>${emailErrors.join("<br>")}</p></div>`;
+        errorMessages += `<div class="errors-div"><p>${emailErrors.join(
+          "<br>"
+        )}</p></div>`;
       }
     }
 
@@ -316,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await axios.post("http://localhost:5000/users", data);
       if (response.status === 201) {
-        alert("Регистрация прошла успешно!");
+        createModal("Регистрация прошла успешно!");
         form.reset();
         loginTouched = false;
         passwordTouched = false;
@@ -324,11 +340,14 @@ document.addEventListener("DOMContentLoaded", () => {
         rePasswordTouched = false;
         showErrors();
       } else {
-        alert("Ошибка при отправке данных");
+        createModal("Ошибка при отправке данных");
       }
     } catch (error) {
-      console.error("Ошибка при отправке данных:", error.response || error.message);
-      alert("Не удалось отправить данные на сервер");
+      console.error(
+        "Ошибка при отправке данных:",
+        error.response || error.message
+      );
+      createModal("Не удалось отправить данные на сервер");
     }
   };
 
@@ -346,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isPasswordUnique = await checkPasswordUnique(passwordValue);
 
       if (!isPasswordUnique) {
-        alert("Пароль уже занят!");
+        createModal("Пароль уже занят!");
         return;
       }
 
@@ -358,7 +377,12 @@ document.addEventListener("DOMContentLoaded", () => {
         email: RegUserEmail.value.trim(),
         exchange: exchangeSelect.value,
         title: title,
-        banned: false
+        banned: false,
+        coins: 0,
+        energy: 10000,
+        earnPerHour: 0,
+        lastUpdate: Date.now(),
+        lastVisitTime: Date.now(),
       };
 
       await sendData(userData);
