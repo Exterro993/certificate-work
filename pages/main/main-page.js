@@ -177,7 +177,7 @@ function handleUserExitAndEarnings() {
 
   // Показываем уведомление о заработке, если есть монеты
   if (coinsEarned > 0) {
-    alert(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
+    createModal(`Вы отсутствовали ${offlineSeconds} секунд и заработали ${coinsEarned} монет!`);
   }
 }
 
@@ -193,10 +193,10 @@ window.addEventListener("beforeunload", (event) => {
     event.returnValue = confirmationMessage;
 
     // Отображаем пользовательское подтверждение
-    const userConfirmed = confirm("Вы уверены, что хотите выйти?");
+    const userConfirmed = createConfirmModal("Вы уверены, что хотите выйти?");
     if (userConfirmed) {
       handleUserExitAndEarnings(); // Сохраняем данные и начисляем монеты
-      updateUserInJson()
+      // updateUserInJson()
     } else {
       event.preventDefault(); // Блокируем закрытие вкладки
     }
