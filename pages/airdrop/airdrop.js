@@ -1,3 +1,5 @@
+import { manageLoader } from "../../loader.js";
+manageLoader()
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   centeredSlides: true,

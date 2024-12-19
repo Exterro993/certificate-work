@@ -1,3 +1,5 @@
+import { manageLoader } from "../../loader.js";
+manageLoader()
 // Путь к серверу для получения данных пользователей, карт и промокодов
 const usersUrl = 'http://localhost:5000/users';
 import { createModal } from "../../modal.js";

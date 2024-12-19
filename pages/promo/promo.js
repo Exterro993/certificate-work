@@ -1,6 +1,8 @@
-// Проверка наличия данных о пользователе в localStorage
+import { manageLoader } from "../../loader.js";
+manageLoader()
 import { createModal } from "../../modal.js";
 import { createConfirmModal } from "../../modal.js";
+// Проверка наличия данных о пользователе в localStorage
 
 if (!localStorage.getItem('userData')) {
     localStorage.setItem('userData', JSON.stringify({

@@ -1,3 +1,5 @@
+import { manageLoader } from "../../loader.js";
+manageLoader()
 const groupList = document.getElementById("groupList");
 const cardsContainer = document.getElementById("cardsContainer");
 import { createConfirmModal, createModal } from "../../modal.js";

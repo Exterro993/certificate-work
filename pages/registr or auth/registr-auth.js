@@ -1,3 +1,5 @@
+import { manageLoader } from "../../loader.js";
+manageLoader()
 const replaceBtn = document.querySelector(".to__auth");
 const registr = document.querySelector("#registr");
 const auth = document.querySelector("#auth");

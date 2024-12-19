@@ -1,4 +1,6 @@
 export const Cardclick = document.querySelectorAll(".card");
+import { manageLoader } from "../../loader.js";
+manageLoader()
 export const span = document.querySelectorAll(".span");
 export const CardclickFun = () => {
   Cardclick.forEach((el) => {

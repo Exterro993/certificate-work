@@ -1,3 +1,5 @@
+import { manageLoader } from "../../loader.js";
+manageLoader()
 import { updateUserInJson } from "./data-func.js";
 import { createModal } from "../../modal.js";
 import { createConfirmModal } from "../../modal.js";
