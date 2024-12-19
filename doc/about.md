@@ -26,11 +26,11 @@ export const CardclickFun = () => {
   });
 };
 ```
-[Страничка Регистрации](./doc/registr-auth.md)
-[Страничка о проекте](./doc/about.md)
-[Основная страничка](./doc/main.md)
-[Страница карточек](./doc/cards.md)
-[Страничка друзей](./doc/friends.md)
-[Страника промокодов](./doc/promo.md)
-[Страничка информации](./doc/airdrop.md)
-[Админ страничка](./doc/admin.md)
+- [Страничка Регистрации](./doc/registr-auth.md)
+- [Страничка о проекте](./doc/about.md)
+- [Основная страничка](./doc/main.md)
+- [Страница карточек](./doc/cards.md)
+- [Страничка друзей](./doc/friends.md)
+- [Страника промокодов](./doc/promo.md)
+- [Страничка информации](./doc/airdrop.md)
+- [Админ страничка](./doc/admin.md)
